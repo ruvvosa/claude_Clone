@@ -80,6 +80,7 @@ nav{
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    pointer-events: none;
 }
 
 .nav-links{
@@ -104,4 +105,3 @@ nav{
     transform: translateY(-2px); /**위로 2px만큼 이동 */
     box-shadow: 0 4px 12px rgba(222, 184, 135, 0.4);
 }
-
