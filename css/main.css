@@ -50,3 +50,58 @@ body{
     0%,100% {transform: translateY(0px) rotate(0deg);}
     50% {transform: translateY(-20px) rotate(5deg);}
 }
+
+/**Header */
+header{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    background-color: #f9f6dd;
+    backdrop-filter: blur(10px);
+    border-bottom: solid #DEB887 3px;
+    box-shadow: 0 4px 20px  rgba(222, 184, 135, 0.3);
+
+}
+
+nav{
+    max-width: 1200px;
+    margin: 0 auto; /**중앙정렬 */
+    padding: 1rem 2rem;
+    display: flex; /**플렉스 박스 */
+    justify-content: space-between; /**주축 정렬법 지정 */
+    align-items: center; /**교차축 정렬법 지정 */
+}
+
+.logo{
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #8B4513;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-links{
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+
+}
+
+.nav-links a{
+    color: #8B4513;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-links a:hover{
+    background-color: #FFE4B5 ;
+    transform: translateY(-2px); /**위로 2px만큼 이동 */
+    box-shadow: 0 4px 12px rgba(222, 184, 135, 0.4);
+}
+
