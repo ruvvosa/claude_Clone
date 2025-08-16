@@ -13,7 +13,7 @@ body{
 }
 
 /**홈 뒷배경 요소 */
-.floating-Elements{
+.floating_Elements{
     position: fixed;
     top: 0;
     left: 0;
@@ -100,7 +100,7 @@ nav{
     position: relative;
 }
 
-.nav-links a:hover{
+.nav_Links a:hover{
     background-color: #FFE4B5 ;
     transform: translateY(-2px); /**위로 2px만큼 이동 */
     box-shadow: 0 4px 12px rgba(222, 184, 135, 0.4);
