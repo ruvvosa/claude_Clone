@@ -129,7 +129,7 @@ nav{
     animation: houseFloat 4s ease-in-out infinite;
 }
 
-/**표지판 위  */
+/**표지판 위 고리 */
 .sign::before{
     content: '';
     position: absolute;
@@ -197,4 +197,76 @@ nav{
     background-color: #FF1493;
     box-shadow: 0 15px 35px rgba(255, 105, 180, 0.4);
     transform: translateY(-5px) scale(1.05);
+}
+
+/**기술 소개 */
+
+.about{
+    background: #FFF8DC; 
+    box-shadow: 0 15px 35px rgba(255, 105, 180, 0.4);
+    padding: 6rem 0;
+    position: relative;
+    z-index: 2;
+}
+
+/**파도 */
+.about::before{
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    position: absolute;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path d="M0,60 C200,20 400,100 600,60 C800,20 1000,100 1200,60 V0 H0 Z" fill="%2387CEEB"/></svg>') repeat-x;
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto; /**가운데 정렬 */
+    padding: 0 2rem;
+}
+
+
+.section_Title_Reveal{
+    text-align: center;
+    color:#8B4513;
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.about_Content{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 4rem;
+    margin-top: 0.5rem;
+}
+
+.section_Title_Reveal::after{
+    content: '🌳🌼🌳';
+   display: block;
+   font-size: 2rem;
+   margin-top: 0.5rem;
+}
+
+.text_Part{
+    background-color: white;
+    padding: 2rem;
+    border-radius: 25px;
+    border: #DEB887 3px solid;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #654321;
+    
+}
+
+
+.skill_Part{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    text-align: center;
 }
