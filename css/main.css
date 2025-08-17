@@ -310,5 +310,61 @@ nav{
 .skill_Card p{
     color: #654321;
     font-weight: 600;
+}
 
+/**프로젝트 소개 */
+
+.project{
+    background: linear-gradient(45deg, #F0E68C 0%, #FFEFD5 50%, #F0E68C 100%);
+    padding: 6rem 0;
+    position: relative;
+    z-index: 2;
+}
+
+.work_Part{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px,1fr));
+    gap: 3rem;
+    margin-top: 4rem
+}
+
+.work_Card{
+    padding: ;
+    border:4px #DEB887 solid;
+    border-radius: 25px;
+    background-color:white;
+    overflow: hidden;
+}
+
+.work_Image{
+    animation: ;
+    text-align: center;
+    background-color: red;
+}
+
+.work_Info{
+    padding: 2rem;
+}
+
+.work_Info h3{
+    font-size: ;
+    font-weight: ;
+    margin-bottom: ;
+    color: ;
+}
+
+.work_Info p{
+    color: ;
+
+}
+
+.project_Tech{
+
+}
+
+.tech_Tag{
+    padding: ;
+    border-radius: ;
+    background-color: ;
+    color: ;
 }
