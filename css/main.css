@@ -268,5 +268,47 @@ nav{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
+}
+
+.skill_Card{
+    background: linear-gradient(135deg, #FFE4E1 0%, #FFF0F5 100%);
+    padding: 2rem;
     text-align: center;
+    border: 3px solid transparent;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+
+}
+
+.skill_Card:hover{
+    transform: translateY(-10px) scale(1.05);
+    border-color: #FF69B4;
+    box-shadow: 0 20px 40px rgba(255, 105, 180, 0.2);
+}
+
+.skill_Icon{
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+    animation: wiggle 2s ease-in-out infinite;
+}
+
+@keyframes wiggle{
+    0%,100%{transform: rotate(0deg);}
+    25%{transform: rotate(5deg);}
+    75%{transform: rotate(-5deg);}
+}
+
+.skill_Card h3{
+    color: #8B4513;
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.skill_Card p{
+    color: #654321;
+    font-weight: 600;
+
 }
