@@ -208,7 +208,7 @@ nav {
     font-size: 1.3rem;
     color: #654321;
     margin-bottom: 2rem;
-    animation: slideInDown 1s ease;
+    animation: slideInUp 1s ease;
 }
 
 .cta_Button {
@@ -293,7 +293,7 @@ nav {
     font-size: 1.2rem;
     line-height: 1.8;
     color: #654321;
-
+    animation: slideInLeft 1s ease;
 }
 
 
@@ -301,6 +301,7 @@ nav {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
+    animation: slideInRight 1s ease;
 }
 
 .skill_Card {
@@ -510,3 +511,51 @@ nav {
     font-weight: 900;
     font-size: 1.1rem;
 }
+
+/**애니메이션 */
+
+@keyframes slideInDown{
+    from{
+        opacity: 0;
+        transform: translateY(-50deg);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInUp{
+    from{
+        opacity: 0;
+        transform: translateY(50deg);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+ @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
