@@ -456,3 +456,57 @@ nav {
     transform: scale(1.1);
     background: #FF1493;
 }
+
+/**연락 수단 */
+
+.contact{
+    padding: 6rem 0;
+    background: linear-gradient(135deg, #FFE4E1 0%, #F0F8FF 100%);
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+
+.contact_Part{
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.contact_Card{
+    padding: 2rem;
+    background-color: white;
+    border-radius: 25px;
+    border: #DEB887 solid 3px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    cursor: pointer;
+    min-width: 200px;
+    transition: all 0.3s ease;
+}
+
+.contact_Card:hover{
+    border-color: #FF69B4;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    transform: translateY(-10px) scale(1.05);
+}
+
+.contact_Card i{
+    display: block;
+    margin-bottom: 1rem;
+    font-size: 3em;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse{
+    0%,100%{transform: scale(1);}
+    50%{transform: scale(1.1);}
+}
+
+.contact_Card p{
+    color: #8B4513;
+    font-weight: 900;
+    font-size: 1.1rem;
+}
