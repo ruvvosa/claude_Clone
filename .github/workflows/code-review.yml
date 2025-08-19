@@ -30,7 +30,9 @@ jobs:
               pull_number: context.issue.number,
             });            
             const changedFiles = files.filter(file => 
-              file.filename.endsWith('.go')
+               file.filename.endsWith('.html') ||
+               file.filename.endsWith('.css') ||
+               file.filename.endsWith('.js')
             );            
             const fileList = changedFiles.map(f => f.filename);
             console.log('Changed Go files:', fileList);            
