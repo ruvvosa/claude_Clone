@@ -1,0 +1,561 @@
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Hi+Melody&family=Merienda:wght@300..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Gowun Dodum", sans-serif;
+    background: linear-gradient(180deg, #87CEEB 0%, #98FB98 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/**홈 뒷배경 요소 */
+.floating_Elements {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.cloud,
+.leaf,
+.flower {
+    position: absolute;
+    /**for 인라인 배치 방지,의도한 스타일로 배치하려고 */
+    animation: float 6s ease-in-out infinite;
+}
+
+.cloud {
+    font-size: 2rem;
+    color: rgba(255, 255, 255, 0.8);
+    animation-delay: 0s;
+}
+
+.leaf {
+    font-size: 1.5rem;
+    color: rgba(34, 139, 34, 0.6);
+    animation-delay: -2s;
+}
+
+.flower {
+    font-size: 1.2rem;
+    color: rgba(255, 182, 193, 0.8);
+    animation-delay: -4s;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-20px) rotate(5deg);
+    }
+}
+
+/**Header */
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    background-color: #f9f6dd;
+    backdrop-filter: blur(10px);
+    border-bottom: solid #DEB887 3px;
+    box-shadow: 0 4px 20px rgba(222, 184, 135, 0.3);
+
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    /**중앙정렬 */
+    padding: 1rem 2rem;
+    display: flex;
+    /**플렉스 박스 */
+    justify-content: space-between;
+    /**주축 정렬법 지정 */
+    align-items: center;
+    /**교차축 정렬법 지정 */
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #8B4513;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    pointer-events: none;
+}
+
+.nav_Links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+
+}
+
+.nav_Links a {
+    color: #8B4513;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav_Links a:hover {
+    background-color: #FFE4B5;
+    transform: translateY(-2px);
+    /**위로 2px만큼 이동 */
+    box-shadow: 0 4px 12px rgba(222, 184, 135, 0.4);
+}
+
+/**home */
+
+.hero {
+    display: flex;
+    height: 100vh;
+    background-color: #87CFE9;
+    align-items: center;
+    /**교차축 정렬 */
+    justify-content: center;
+    /**주축 정렬 */
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.sign {
+    padding: 3rem 2rem;
+    background-color: #F4A460;
+    border-radius: 30px;
+    border: 4px solid #DEB887;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    position: relative;
+    animation: houseFloat 4s ease-in-out infinite;
+}
+
+/**표지판 위 고리 */
+.sign::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 40%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 60px solid transparent;
+    border-right: 60px solid transparent;
+    border-bottom: 40px solid #CD853F;
+}
+
+/**표지판 위 꽃 */
+.sign::after {
+    content: '🌸';
+    position: absolute;
+    font-size: 2rem;
+    top: -15px;
+    right: 20px;
+    animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes houseFloat {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.content h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+    color: #8B4513;
+    animation: slideInDown 1s ease;
+}
+
+.content p {
+    font-size: 1.3rem;
+    color: #654321;
+    margin-bottom: 2rem;
+    animation: slideInUp 1s ease;
+}
+
+.cta_Button {
+    display: inline-block;
+    padding: 15px 40px;
+    border-radius: 50px;
+    background-color: #FF69B4;
+    box-shadow: 0 8px 25px rgba(255, 105, 180, 0.3);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    transition: slideInUp 1s ease 0.6s both;
+}
+
+.cta_Button:hover {
+    background-color: #FF1493;
+    box-shadow: 0 15px 35px rgba(255, 105, 180, 0.4);
+    transform: translateY(-5px) scale(1.05);
+}
+
+/**기술 소개 */
+
+.about {
+    background: #FFF8DC;
+    box-shadow: 0 15px 35px rgba(255, 105, 180, 0.4);
+    padding: 6rem 0;
+    position: relative;
+    z-index: 2;
+}
+
+/**파도 */
+.about::before {
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    position: absolute;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path d="M0,60 C200,20 400,100 600,60 C800,20 1000,100 1200,60 V0 H0 Z" fill="%2387CEEB"/></svg>') repeat-x;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    /**가운데 정렬 */
+    padding: 0 2rem;
+}
+
+
+.section_Title_Reveal {
+    text-align: center;
+    color: #8B4513;
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.about_Content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 4rem;
+    margin-top: 0.5rem;
+}
+
+.section_Title_Reveal::after {
+    content: '🌳🌼🌳';
+    display: block;
+    font-size: 2rem;
+    margin-top: 0.5rem;
+}
+
+.text_Part {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 25px;
+    border: #DEB887 3px solid;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #654321;
+    animation: slideInLeft 1s ease;
+}
+
+
+.skill_Part {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    animation: slideInRight 1s ease;
+}
+
+.skill_Card {
+    background: linear-gradient(135deg, #FFE4E1 0%, #FFF0F5 100%);
+    padding: 2rem;
+    text-align: center;
+    border: 3px solid transparent;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+
+}
+
+.skill_Card:hover {
+    transform: translateY(-10px) scale(1.05);
+    border-color: #FF69B4;
+    box-shadow: 0 20px 40px rgba(255, 105, 180, 0.2);
+}
+
+.skill_Icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+    animation: wiggle 2s ease-in-out infinite;
+}
+
+@keyframes wiggle {
+
+    0%,
+    100% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(5deg);
+    }
+
+    75% {
+        transform: rotate(-5deg);
+    }
+}
+
+.skill_Card h3 {
+    color: #8B4513;
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.skill_Card p {
+    color: #654321;
+    font-weight: 600;
+}
+
+/**프로젝트 소개 */
+
+.project {
+    background: linear-gradient(45deg, #F0E68C 0%, #FFEFD5 50%, #F0E68C 100%);
+    padding: 6rem 0;
+    position: relative;
+    z-index: 2;
+}
+
+.work_Part {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+    margin-top: 4rem;
+}
+
+.work_Card {
+    border: 4px #DEB887 solid;
+    border-radius: 25px;
+    background-color: white;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    transition: all 0.5s ease;
+}
+
+/* .work_Card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #FF69B4, #87CEEB, #98FB98, #FFB6C1);
+} */
+
+
+.work_Card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+.work_Image {
+    height: 200px;
+    background: linear-gradient(135deg, #FF9A8B 0%, #A8E6CF 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    animation: projectFloat 3s ease-in-out infinite;
+}
+
+@keyframes projectFloat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.work_Info {
+    padding: 2rem;
+}
+
+.work_Info h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #8B4513;
+}
+
+.work_Info p {
+    color: #8B4513;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.project_Tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.tech_Tag {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    background: #FF69B4;
+    color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.tech_Tag:hover {
+    transform: scale(1.1);
+    background: #FF1493;
+}
+
+/**연락 수단 */
+
+.contact{
+    padding: 6rem 0;
+    background: linear-gradient(135deg, #FFE4E1 0%, #F0F8FF 100%);
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+
+.contact_Part{
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.contact_Card{
+    padding: 2rem;
+    background-color: white;
+    border-radius: 25px;
+    border: #DEB887 solid 3px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    cursor: pointer;
+    min-width: 200px;
+    transition: all 0.3s ease;
+}
+
+.contact_Card:hover{
+    border-color: #FF69B4;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    transform: translateY(-10px) scale(1.05);
+}
+
+.contact_Card i{
+    display: block;
+    margin-bottom: 1rem;
+    font-size: 3em;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse{
+    0%,100%{transform: scale(1);}
+    50%{transform: scale(1.1);}
+}
+
+.contact_Card p{
+    color: #8B4513;
+    font-weight: 900;
+    font-size: 1.1rem;
+}
+
+/**애니메이션 */
+
+@keyframes slideInDown{
+    from{
+        opacity: 0;
+        transform: translateY(-50deg);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInUp{
+    from{
+        opacity: 0;
+        transform: translateY(50deg);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+ @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
