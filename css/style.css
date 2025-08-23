@@ -24,9 +24,7 @@ body {
     z-index: 1;
 }
 
-.cloud,
-.leaf,
-.flower {
+.cloud,.leaf,.flower {
     position: absolute;
     /**for 인라인 배치 방지,의도한 스타일로 배치하려고 */
     animation: float 6s ease-in-out infinite;
@@ -127,7 +125,6 @@ nav {
 .hero {
     display: flex;
     height: 100vh;
-    background-color: #87CFE9;
     align-items: center;
     /**교차축 정렬 */
     justify-content: center;
