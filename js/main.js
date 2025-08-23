@@ -28,7 +28,7 @@ const revealObserver = new IntersectionObserver((entries) =>{ //요소 감지되
             entry.target.classList.add('active');
             //여려 요소에 계단식 애니메이션 추가
             const index = Array.from(entry.target.parentNode.children).indexOf(entry.target);
-            entry.target.style.transitionDelay = `${index * 0.1}s`;
+            entry.target.style.transitionDelay = `${index * 0.1}s`; //순차적 딛레이
         }
     });
 },revealOptions);
@@ -36,3 +36,17 @@ const revealObserver = new IntersectionObserver((entries) =>{ //요소 감지되
 revealElements.forEach(element => {
     revealObserver.observe(element);
 });
+
+// Add random floating animations to background elements
+
+function randomFloat(){
+    const floatingElements = document.querySelectorAll('.cloud, .leaf, .flower');
+    floatingElements.forEach(element => {
+        const randomDelay = Math.random() * 3;
+        const randomDuration = 4 + Math.random() * 4;
+        element.style.animationDelay = `-${randomDelay}s`;
+        element.style.animatuonDuration = `${randomDuration}s`;
+    });
+}
+
+randomFloat();
