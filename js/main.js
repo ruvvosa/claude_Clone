@@ -1,0 +1,66 @@
+// scroll reveal animation
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click',function(e){
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if(target){
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+// Scroll reveal animation
+
+const revealElements = document.querySelectorAll('.reveal');
+const revealOptions = {
+    threshold: 0.15, //요소가 얼마나 보여야 콜백함수가 실행되는지 결정되는 임계값
+    rootMargin: '0px 0px -50px 0px' //뷰포트 감지 영역
+};
+
+
+const revealObserver = new IntersectionObserver((entries) =>{ //요소 감지되면 동작할 함수
+    entries.forEach(entry => {
+        if(entry.isIntersecting){  //화면에 보일 때만 실행
+            entry.target.classList.add('active');
+            //여려 요소에 계단식 애니메이션 추가
+            const index = Array.from(entry.target.parentNode.children).indexOf(entry.target);
+            entry.target.style.transitionDelay = `${index * 0.1}s`; //순차적 딛레이
+        }
+    });
+},revealOptions);
+
+revealElements.forEach(element => {
+    revealObserver.observe(element);
+});
+
+// Add random floating animations to background elements
+
+function randomFloat(){
+    const floatingElements = document.querySelectorAll('.cloud, .leaf, .flower');
+    floatingElements.forEach(element => {
+        const randomDelay = Math.random() * 3;
+        const randomDuration = 4 + Math.random() * 4;
+        element.style.animationDelay = `-${randomDelay}s`;
+        element.style.animatuonDuration = `${randomDuration}s`;
+    });
+}
+
+randomFloat();
+
+// add interactive hover effects
+
+document.querySelectorAll('.contact_Card').forEach(card => {
+    card.addEventListener('mouseenter',function(){
+        this.style.transform += ' scale(1.02)';
+    });
+
+    card.addEventListener('mouseleave',function() {
+        this.style.transform = this.style.transform.replace(' scale(1.02)', ''); //마우스 뗐을 때  이전 트렌지션 효과 제거하려고
+    });
+});
+
+
