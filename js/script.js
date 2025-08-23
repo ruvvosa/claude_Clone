@@ -53,7 +53,7 @@ randomFloat();
 
 // add interactive hover effects
 
-document.querySelectorAll('.contact_Card').forEach(card => {
+document.querySelectorAll('.contact_Card, .work_Card').forEach(card => {
     card.addEventListener('mouseenter',function(){
         this.style.transform += ' scale(1.02)';
     });
