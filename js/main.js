@@ -50,3 +50,17 @@ function randomFloat(){
 }
 
 randomFloat();
+
+// add interactive hover effects
+
+document.querySelectorAll('.contact_Card').forEach(card => {
+    card.addEventListener('mouseenter',function(){
+        this.style.transform += ' scale(1.02)';
+    });
+
+    card.addEventListener('mouseleave',function() {
+        this.style.transform = this.style.transform.replace(' scale(1.02)', ''); //마우스 뗐을 때  이전 트렌지션 효과 제거하려고
+    });
+});
+
+
