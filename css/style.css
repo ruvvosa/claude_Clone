@@ -583,7 +583,7 @@ nav {
 
     .nav_Links{
         gap: 1rem;
-        margin-left: 1rem;
+        justify-content: center;
     }
 
     .content h1{
