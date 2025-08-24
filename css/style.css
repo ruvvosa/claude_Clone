@@ -577,8 +577,13 @@ nav {
 /**미디어 쿼리 */
 
 @media screen and (max-width: 768px) {
-    .nav_Links{
+    .logo{
         display: none;
+    }
+
+    .nav_Links{
+        gap: 1rem;
+        margin-left: 1rem;
     }
 
     .content h1{
