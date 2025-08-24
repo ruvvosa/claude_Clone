@@ -597,4 +597,9 @@ nav {
     .sign{
         margin: 0 1rem;
     }
+
+    .sign::before{
+        top: -20px;
+        left: 37%;
+    }
 }
