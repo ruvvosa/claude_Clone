@@ -513,6 +513,10 @@ nav {
     font-size: 1.1rem;
 }
 
+#github:active{
+    text-decoration: none;
+}
+
 /**애니메이션 */
 
 @keyframes slideInDown{
