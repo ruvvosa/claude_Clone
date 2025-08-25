@@ -512,8 +512,12 @@ nav {
     font-weight: 900;
     font-size: 1.1rem;
 }
-
-#github:active{
+#github:link{
+    color: #8B4513;
+    text-decoration: none;
+}
+#github:visited{
+    color: #8B4513;
     text-decoration: none;
 }
 
